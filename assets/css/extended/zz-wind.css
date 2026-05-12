@@ -1,18 +1,32 @@
-/* 风的轻装修：只做气质，不动骨架。 */
+/*
+ * 风的第二层装修：
+ * 目标不是花哨，而是把页面从“能读”推到“愿意久待”。
+ */
+
 :root {
     --content-width: 760px;
     --article-radius: 18px;
+    --article-border: color-mix(in srgb, var(--secondary) 18%, transparent);
+    --soft-surface: color-mix(in srgb, var(--theme) 96%, var(--secondary) 4%);
+    --soft-surface-2: color-mix(in srgb, var(--theme) 92%, var(--secondary) 8%);
+    --accent-soft: color-mix(in srgb, var(--primary) 10%, transparent);
+    --accent-strong: color-mix(in srgb, var(--primary) 85%, var(--theme));
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     letter-spacing: 0.01em;
     text-rendering: optimizeLegibility;
+    background:
+        radial-gradient(circle at top, color-mix(in srgb, var(--primary) 5%, transparent) 0%, transparent 34%),
+        var(--theme);
 }
 
-.main {
-    max-width: var(--content-width);
-}
-
+/* Layout: keep the page narrow enough to breathe. */
+.main,
 .header-nav,
 .footer,
 .post-content,
@@ -20,8 +34,13 @@ body {
     width: min(100% - 32px, var(--content-width));
 }
 
+.main {
+    max-width: var(--content-width);
+}
+
+/* Home/profile */
 .profile {
-    padding-top: 1rem;
+    padding-top: 1.2rem;
 }
 
 .profile .profile_inner {
@@ -29,26 +48,45 @@ body {
 }
 
 .profile img {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.08);
+    border-radius: 50%;
 }
 
+.profile a {
+    text-underline-offset: 0.18em;
+}
+
+/* Cards / entries */
 .post-entry,
 .first-entry,
 .post-single {
     border-radius: var(--article-radius);
-    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    border: 1px solid var(--article-border);
+    background: var(--soft-surface);
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease,
+        background 0.18s ease;
 }
 
 .post-entry:hover,
 .first-entry:hover,
 .post-single:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+    background: var(--soft-surface-2);
+    border-color: color-mix(in srgb, var(--primary) 22%, var(--secondary));
 }
 
+/* Article reading space */
 .post-content {
-    line-height: 1.9;
+    line-height: 1.92;
     font-size: 1.03rem;
+}
+
+.post-content > :first-child {
+    margin-top: 0;
 }
 
 .post-content h2,
@@ -67,15 +105,40 @@ body {
     margin-bottom: 1rem;
 }
 
+.post-content hr {
+    margin: 2rem 0;
+    border-color: color-mix(in srgb, var(--secondary) 35%, transparent);
+}
+
 .post-content blockquote {
     border-inline-start-width: 3px;
     padding: 0.9rem 1rem;
-    background: rgba(127, 127, 127, 0.05);
+    background: color-mix(in srgb, var(--primary) 4%, var(--theme));
     border-radius: 0 12px 12px 0;
 }
 
 .post-content code {
-    border-radius: 6px;
+    border-radius: 7px;
+    background: color-mix(in srgb, var(--primary) 7%, var(--theme));
+}
+
+.post-content pre {
+    border-radius: 16px;
+    border: 1px solid var(--article-border);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
+}
+
+.post-content table {
+    display: block;
+    overflow-x: auto;
+    border-radius: 14px;
+    border: 1px solid var(--article-border);
+    background: var(--soft-surface);
+}
+
+.post-content th,
+.post-content td {
+    padding: 0.8rem 0.9rem;
 }
 
 .post-content a {
@@ -83,10 +146,44 @@ body {
     text-underline-offset: 0.16em;
 }
 
+.post-content a:hover {
+    color: var(--accent-strong);
+}
+
+/* Tag / chip-like elements */
+.terms-tags a,
+.post-tags a,
+.tag-cloud a,
+.button,
+.pagination a {
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--secondary) 20%, transparent);
+    background: color-mix(in srgb, var(--primary) 4%, var(--theme));
+}
+
+.terms-tags a:hover,
+.post-tags a:hover,
+.tag-cloud a:hover,
+.button:hover,
+.pagination a:hover {
+    border-color: color-mix(in srgb, var(--primary) 28%, var(--secondary));
+    background: var(--accent-soft);
+}
+
+/* Navigation / footer */
+.header-nav {
+    backdrop-filter: saturate(1.2) blur(8px);
+}
+
 .footer {
     opacity: 0.82;
 }
 
+.footer a {
+    text-underline-offset: 0.18em;
+}
+
+/* Small-screen tuning */
 @media screen and (max-width: 900px) {
     .main,
     .header-nav,
@@ -99,5 +196,17 @@ body {
     .post-content {
         font-size: 1rem;
         line-height: 1.85;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .post-entry,
+    .first-entry,
+    .post-single {
+        transition: none;
     }
 }
