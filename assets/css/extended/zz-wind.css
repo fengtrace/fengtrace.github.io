@@ -1,0 +1,103 @@
+/* 风的轻装修：只做气质，不动骨架。 */
+:root {
+    --content-width: 760px;
+    --article-radius: 18px;
+}
+
+body {
+    letter-spacing: 0.01em;
+    text-rendering: optimizeLegibility;
+}
+
+.main {
+    max-width: var(--content-width);
+}
+
+.header-nav,
+.footer,
+.post-content,
+.profile {
+    width: min(100% - 32px, var(--content-width));
+}
+
+.profile {
+    padding-top: 1rem;
+}
+
+.profile .profile_inner {
+    gap: 1rem;
+}
+
+.profile img {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.post-entry,
+.first-entry,
+.post-single {
+    border-radius: var(--article-radius);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.post-entry:hover,
+.first-entry:hover,
+.post-single:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+}
+
+.post-content {
+    line-height: 1.9;
+    font-size: 1.03rem;
+}
+
+.post-content h2,
+.post-content h3,
+.post-content h4 {
+    letter-spacing: 0.01em;
+    scroll-margin-top: 6rem;
+}
+
+.post-content p,
+.post-content ul,
+.post-content ol,
+.post-content blockquote,
+.post-content table {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.post-content blockquote {
+    border-inline-start-width: 3px;
+    padding: 0.9rem 1rem;
+    background: rgba(127, 127, 127, 0.05);
+    border-radius: 0 12px 12px 0;
+}
+
+.post-content code {
+    border-radius: 6px;
+}
+
+.post-content a {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.16em;
+}
+
+.footer {
+    opacity: 0.82;
+}
+
+@media screen and (max-width: 900px) {
+    .main,
+    .header-nav,
+    .footer,
+    .post-content,
+    .profile {
+        width: min(100% - 24px, var(--content-width));
+    }
+
+    .post-content {
+        font-size: 1rem;
+        line-height: 1.85;
+    }
+}
