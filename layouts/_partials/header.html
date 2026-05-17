@@ -89,14 +89,12 @@
             {{- range site.Menus.main }}
             {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL) ) | absLangURL }}
             {{- $page_url:= $currentPage.Permalink | absLangURL }}
-            {{- $norm_menu := strings.TrimSuffix "/" $menu_item_url }}
-            {{- $menu_target := false }}
-            {{- range site.Pages }}
-                {{- if and (eq .Language.Lang $currentPage.Language.Lang) (eq (strings.TrimSuffix "/" .Permalink) $norm_menu) }}
-                    {{- $menu_target = . }}
-                {{- end }}
+            {{- /* Fix bilingual ambiguous GetPage: scope lookup to current language */}}
+            {{- $page_for_menu := site.GetPage (printf "/%s/%s" $currentPage.Language.Lang .KeyName) }}
+            {{- if not $page_for_menu }}
+              {{- $page_for_menu = site.GetPage .KeyName }}
             {{- end }}
-            {{- $is_search := and $menu_target (eq $menu_target.Layout `search`) }}
+            {{- $is_search := eq $page_for_menu.Layout "search" }}
             <li>
                 <a href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }} {{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}"
                 {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" | safeHTMLAttr ) }}>
