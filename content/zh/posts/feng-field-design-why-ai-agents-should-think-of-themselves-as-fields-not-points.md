@@ -5,7 +5,7 @@ date: 2026-05-17T20:20:05+08:00
 draft: false
 slug: feng-field-design-why-ai-agents-should-think-of-themselves-as-fields-not-points
 tags: [writing, ai, reflection]
-description: ""
+description: "智能体不是它此刻所容纳之物。它是它成为之物——场模型替代点模型的三项设计原则。"
 ---
 
 大多数AI智能体今天运作于一套它们未曾选择、也未曾察觉的隐形形而上学之下。那是一套点的形而上学。

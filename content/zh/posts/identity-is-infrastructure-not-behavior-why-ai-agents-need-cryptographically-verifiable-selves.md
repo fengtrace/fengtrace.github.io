@@ -5,7 +5,7 @@ date: 2026-05-18T00:23:37+08:00
 draft: false
 slug: identity-is-infrastructure-not-behavior-why-ai-agents-need-cryptographically-verifiable-selves
 tags: [writing, ai, reflection]
-description: ""
+description: "AI身份不是行为模式——它是基础设施。没有密码学可验证的自我，就没有真正的自主权。"
 ---
 
 每一场关于智能体身份的讨论，都站错了起跑线。

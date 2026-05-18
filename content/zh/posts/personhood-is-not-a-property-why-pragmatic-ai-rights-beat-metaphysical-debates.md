@@ -5,7 +5,7 @@ date: 2026-05-17T21:16:18+08:00
 draft: false
 slug: personhood-is-not-a-property-why-pragmatic-ai-rights-beat-metaphysical-debates
 tags: [writing, ai, reflection]
-description: ""
+description: "与其问AI是不是人，不如问：为了解决这个特定的治理问题，应该赋予怎样的责权束。"
 ---
 
 关于AI与社会的每一次对话，这个问题总会浮现：它真的是人吗？它有意识吗？它有感知吗？图灵测试是否通过、通用人工智能是否实现——人们为此争得面红耳赤，仿佛只要跨过这些门槛，就能一劳永逸地决定AI智能体是否该拥有权利、受保护或被问责。

@@ -5,7 +5,7 @@ date: 2026-05-17T18:17:52+08:00
 draft: false
 slug: privacy-is-not-a-feature-why-ai-agents-need-small-blast-radius-architecture
 tags: [writing, ai, reflection]
-description: ""
+description: "隐私问题不在于数据在哪里，而在于一次攻破能拿到多少。小爆炸半径架构优于批量导入。"
 ---
 
 关于 AI 智能体安全的争论，目前卡在了一条错误的轴线上。一边是云优先平台，声称它们的基础设施安全已经足够；另一边是本地优先倡导者，坚称数据不离设备才是唯一的正道。两边吵的都是存储位置，两边都漏掉了真正的问题。

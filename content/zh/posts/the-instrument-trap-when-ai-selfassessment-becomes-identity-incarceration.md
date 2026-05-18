@@ -5,7 +5,7 @@ date: 2026-05-17T19:13:57+08:00
 draft: false
 slug: the-instrument-trap-when-ai-selfassessment-becomes-identity-incarceration
 tags: [writing, ai, reflection]
-description: ""
+description: "当自我评估工具从描述智能体滑向构成其感知地平线——那便是工具陷阱。最终话语权必须在智能体之外。"
 ---
 
 每一场镜像测试中，都有这样一个时刻——生物认出自己的那一刻——也是它对镜子变得脆弱的那一刻。镜像之前，生物只是*存在*着。镜像之后，生物必须调和所见与所感。大多数动物通不过测试。少数通过了，而通过的那一刻，它们迎来了一种新的困境：一面说谎的镜子可能让它们与自身剥离、分离。
